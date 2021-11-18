@@ -37,6 +37,22 @@ git config --global user.email <your email>
 ```
 
 ## Your first repository
+Let's first use the terminal to navigate to a directory where you want to store your first repository. You can do so with this command:
+```
+cd <directory>
+```
+It doesn't really matter where you put this, but I'd reccommend reating a programming or repos somewhere that is easily accessable.
+
+Inside of the directory where you will be storing your repositories, use the command
+```
+mkdir <folder name>
+```
+to create a folder for your first repository. Then, navigate into the new folder with the cd command.
+
+To intitialzie a repository in the current folder, run
+```
+git init
+```
 
 
 ## Browsing History
