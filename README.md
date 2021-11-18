@@ -21,7 +21,7 @@ git --version
 If you see a version number, Git is already installed and you can skip the next steps about instillation.
 
 ### How to install:
-1. Download Git from the [downloads page](https://git-scm.com/downloads).
+1. Download the Git installer from the [downloads page](https://git-scm.com/downloads).
 2. Run the installer on your computer, allowing it the necessary permissions.
 3. Select the default installation settings all the way through the instillation process, except for the default editor which you should select as Visual Studio Code.
 4. Once complete, run the command above again to verify that Git installed successfully.
@@ -53,11 +53,62 @@ mkdir <folder name>
 ```
 to create a folder for your first repository. Then, navigate into the new folder with the cd command.
 
-To initialize a repository in the current folder, run
+### Initializing a repository
+
+To initialize a repository in the current folder, run:
 ```
 git init
 ```
 
+We should now add some files to our project. You can add some content to a file at the same time as creating it like this:
+```
+echo hello > file1.txt
+```
+Let's use this command again to make a second file:
+```
+echo print("Hello world") > main.py
+```
+
+Now that we've added some new content to our repo, let's check the status of our working directory:
+```
+git status
+```
+
+You'll notice that both of the files that we just created are in red and listed as "untracked," which means that they have not yet been added to the staging area. The **staging area** is where we put files that will be a part of our next commit.
+
+### Staging files
+We can add individual files to the staging area
+```
+git add <file name>
+```
+or we can add all files from our working directory
+```
+git add .
+```
+
+Let's use the latter command to add both of the files we just created to the staging area. You'll notice that if you run ```git status``` again, the files will now be in green and say that the changes are ready to be committed, which means that they are in the staging area. 
+
+Now instead of creating a new file, let's modify an existing an existing one. We'll add onto file1:
+```
+echo world >> file1.txt
+```
+
+If you run ```git status``` once again, you will see that file1.txt will show up as modified. At this point, we have changes in our working directory that have not yet been added to the staging area. We can use ```git add .``` to add the changes to the staging area, and then all changes will be ready to commit.
+
+### Committing Changes
+We now have a snapshot of our changes in the staging area that we want to commit to permanently store them in our git repository. We can do this with the following command:
+```
+git commit -m "<description>"
+```
+Your description should be a message that describes what this snapshot represents.
+
+#### Committing best practices:
+- Try not to make your commits too big or too small.
+- Commit often, but not excessively.
+- Each commit should represent a logically separate feature.
+- Use meaningful commit messages.
+
+### Ignoring files
 
 ## Browsing History
 
