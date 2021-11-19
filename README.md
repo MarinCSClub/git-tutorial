@@ -123,6 +123,19 @@ If a file is already in the staging area before you add it to .gitignore, you wi
 git rm -r --cached <file name>
 ```
 
+### Connecting to a remote repository
+We first need to [create a repository](https://github.com/new) on GitHub that we can establish a remote connection with.
+
+Once you've done that, copy the https link to the repository. We will use that with the following command in the local repository we made on our computers:
+```
+git remote add origin <link to repo>
+```
+
+Now after we make sure we have committed all the changes we want to add to the remote repository, we can push those changes:
+```
+git push <remote name> <branch name>
+```
+The push command assumes origin for remote name and the current branch for branch name, so we can just use ```git push``` without the other arguments for now.
 
 ## Browsing History
 
