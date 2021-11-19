@@ -109,6 +109,20 @@ Your description should be a message that describes what this snapshot represent
 - Use meaningful commit messages.
 
 ### Ignoring files
+Sometimes there are files that we have stored locally that we don't want to save to a repository. These could be things such as build files, logs, dependencies, files with sensitive information, etc. We can tell Git to not include these types of files but putting their name or file extension in a file called ".gitignore". To create one, run the following command in the root of your repository:
+```
+touch .gitignore
+```
+You can add new files to .gitignore my editing the file in your text editor of choice or by appending to the file by piping the echo command:
+```
+echo <file name> >> .gitignore
+```
+
+If a file is already in the staging area before you add it to .gitignore, you will have to manually untrack it:
+```
+git rm -r --cached <file name>
+```
+
 
 ## Browsing History
 
