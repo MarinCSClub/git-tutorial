@@ -76,6 +76,8 @@ git status
 
 You'll notice that both of the files that we just created are in red and listed as "untracked," which means that they have not yet been added to the staging area. The **staging area** is where we put files that will be a part of our next commit.
 
+You can also add the -s flag ```git status -s``` to get a condensed version of the status.
+
 ### Staging files
 We can add individual files to the staging area
 ```
@@ -138,7 +140,41 @@ git push <remote name> <branch name>
 The push command assumes origin for remote name and the current branch for branch name, so we can just use ```git push``` without the other arguments for now.
 
 ## Browsing History
+In this section, we will be going over some useful commands for when you are browsing the history of your project.
 
+It can be very useful to view a full history of our projects and get data about each commit. To do so, we can use the command
+```
+git log
+```
+This will display a detailed description of each commit which you can scroll though with the up / down arrows, got to the next page with space, or quit with q.
+
+Much of the time, this much information all being displayed at once can be a bit overkill, so we will want a condensed version. We can do so with the --oneline flag. ```git log --oneline``` This is the version of the log command that you will likely be using most often.
+
+If you'd like to view all the changes that were made in a specific commit, you can use the diff command:
+```
+git diff <commit id>
+```
+You can get the commit id from the oneline log.
+
+It is also possible to get a list of all files that were changed using the diff command by using the --name-status flag: ```git diff --name-status```
+
+If you end up needing to restore a deleted file, that is possible with the checkout command. This command on it's own will restore your working directory to a previous state, but we can use it to select just a single file that we want brought back. Here is the how you would do that:
+
+First we want to find all commits that have touched the file we want restored. Once again, we will use the log command, but also pass the file name to it separated by --
+```
+git log --oneline -- <file name>
+```
+We now checkout the file from the most recent commit shown in that log
+```
+git checkout <commit id> <file name>
+```
+We can now commit the file just like we would any other changes.
+
+If we end up needing to restore the whole project to a past commit, that is possible too. We can run
+```
+git reset --hard <commit id>
+```
+You should only do this if the history you are reverting has not been shared with others.
 
 ## Rewriting History
 
