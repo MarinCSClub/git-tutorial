@@ -210,6 +210,8 @@ git switch -C <branch name>
 
 After creating a branch, you can make changes and commits on that new branch as you would normally. Once you are satisfied with the state of the project on the separate branch, you will usually want to merge the changes back into the main / master branch.
 
+Branching section incomplete. Will be continued later.
+
 ## Collaboration
 
 
