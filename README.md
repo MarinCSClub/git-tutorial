@@ -176,47 +176,4 @@ git reset --hard <commit id>
 ```
 You should only do this if the history you are reverting has not been shared with others.
 
-## Branching
-Branching in Git is used when you want to implement a new feature or fix a bug in a separate, encapsulated area. Branches are essentially a pointer to a snapshot of your changes that are not implemented on the main branch. You can think of your commit history like a linked list where branches are commits that diverge from the main list, which will need to be merged back in later on.
-
-Implementing changes on separate branches helps prevent unstable code from being added to the main branch and lets us work on changes separately without effecting other collaborators or the code that may be used in production.
-
-Here's how to create a new branch:
-```
-git branch <branch name>
-```
-
-We can then use ```git branch``` without any parameters to show a list of all branches in our repository.
-
-To switch to a different branch, we use:
-```
-git switch <branch name>
-```
-
-If you'd like to rename a branch, you can do so like this:
-```
-git branch -m <old name> <new name>
-```
-
-To delete a branch, use this command:
-```
-git branch -d <branch name>
-```
-
-A shortcut you may find useful is to create and switch to a new branch at the same time:
-```
-git switch -C <branch name>
-```
-
-After creating a branch, you can make changes and commits on that new branch as you would normally. Once you are satisfied with the state of the project on the separate branch, you will usually want to merge the changes back into the main / master branch.
-
-Branching section incomplete. Will be continued later.
-
-## Collaboration
-
-
-## Check Understanding
-
-
-## Additional Resources
-
+### * More information coming later *
